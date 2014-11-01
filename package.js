@@ -10,6 +10,7 @@ Npm.depends({
 });
 
 Package.on_use(function (api) {
+  api.versionsFrom("METEOR@1.0");
   api.export('busboy');
 
   api.add_files([
@@ -18,6 +19,6 @@ Package.on_use(function (api) {
 });
 
 Package.on_test(function (api) {
-  api.use(['busboy', 'tinytest', 'test-helpers'], 'server');
+  api.use(['pfafman:connect-busboy', 'tinytest', 'test-helpers'], 'server');
   api.add_files('tests.js', 'server');
 });
